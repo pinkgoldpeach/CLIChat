@@ -1,0 +1,5 @@
+out/
+*.idea/
+src/main/resources/
+reports/
+*.iml

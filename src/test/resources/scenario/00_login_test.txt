@@ -1,0 +1,36 @@
+*	Nameserver	ns-root
+*	Nameserver	ns-at
+*	Nameserver	ns-de
+*	Nameserver	ns-vienna-at
+
+*	Chatserver	chatserver
+*	Client		alice.vienna.at
+*	Client		bill.de
+
+
+alice.vienna.at:	!authenticate alice.vienna.at
+alice.vienna.at:	!list
+chatserver:		!users
+bill.de:		!authenticate bill.de 
+alice.vienna.at:	!register 127.0.0.1:8888
+alice.vienna.at:	!lookup bill.de
+alice.vienna.at:	!list
+chatserver:		!users
+bill.de:		!msg alice.vienna.at wie geht es dir?
+ns-root:		!nameservers
+ns-at:			!nameservers
+ns-de:			!nameservers
+ns-at:			!nameservers
+ns-de:			!addresses
+ns-at:			!addresses
+ns-vienna-at:		!addresses
+alice.vienna.at:	!logout
+ns-at:			!addresses
+ns-vienna-at:		!addresses
+ns-at:			!addresses
+ns-de:			!addresses
+bill.de:			!logout
+bill.de:			!list
+chatserver:		!users
+chatserver:		!exit
+
